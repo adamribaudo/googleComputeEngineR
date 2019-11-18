@@ -13,7 +13,7 @@ ssh_options <- function(instance) {
 
   if(!file.exists(private_key)) stop("Couldn't find private key")
   
-  c(paste0("-o ", names(opts), "=", opts, collapse = " "), 
+  c(paste0("-n -o ", names(opts), "=", opts, collapse = " "), 
     " -i ", 
     paste0("'",private_key,"'"))
 }
